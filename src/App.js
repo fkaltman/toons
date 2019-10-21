@@ -11,6 +11,11 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.handleSearch('Jersey City');
+  }
+  
+
   handleSearch = async (location) => {
     const venues = await findToons(location);
     console.log(venues);
