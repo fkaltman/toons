@@ -10,7 +10,7 @@ const opts = {
   }
 }
 
-export const findToons = async (location) => {
-  const response = await axios.get(`${baseURL}?categories=musicvenues&location=${location}`, opts);
+export const findZoos = async (location) => {
+  const response = await axios.get(`${baseURL}?categories=zoos&location=${location}`, opts);
   return response.data.businesses
 }

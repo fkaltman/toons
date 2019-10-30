@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 import Notes from './img/notes.png';
-import { findToons } from './services/api';
+import { findZoos } from './services/api';
 import Search from './components/Search';
-import VenueCards from './components/VenueCards';
+import ZooCards from './components/ZooCards';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      venues: []
+      zoos: []
     }
   }
 
@@ -19,18 +19,18 @@ class App extends React.Component {
   
 
   handleSearch = async (location) => {
-    const venues = await findToons(location);
-    console.log(venues);
-    this.setState({ venues });
+    const zoos = await findZoos(location);
+    console.log(zoos);
+    this.setState({ zoos });
   }
 
   render() {
     return (
       <div>
-        <h1>Search for toons</h1>
+        <h1>Search for Zoos</h1>
         <img className="notes" src={Notes} alt="" />
         <Search handleSearch={this.handleSearch} />
-        <VenueCards venues={this.state.venues} />
+        <ZooCards zoos={this.state.zoos} />
       </div>
     );
   }
