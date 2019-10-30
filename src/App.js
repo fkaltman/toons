@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import Notes from './img/notes.png';
 import { findToons } from './services/api';
+import Search from './components/Search';
+import VenueCards from './components/VenueCards';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +27,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <h1>Search for toons</h1>
         <img className="notes" src={Notes} alt="" />
+        <Search handleSearch={this.handleSearch} />
+        <VenueCards venues={this.state.venues} />
       </div>
     );
   }
